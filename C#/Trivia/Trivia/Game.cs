@@ -175,7 +175,7 @@ namespace UglyTrivia
             else
             {
 
-                Console.WriteLine("Answer was correct!!!!");
+                Console.WriteLine("Answer was corrent!!!!");
                 purses[currentPlayer]++;
                 Console.WriteLine(players[currentPlayer]
                         + " now has "
