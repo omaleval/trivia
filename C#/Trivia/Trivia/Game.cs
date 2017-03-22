@@ -5,9 +5,9 @@ using System.Text;
 
 namespace UglyTrivia
 {
+    
     public class Game
     {
-
 
         List<string> players = new List<string>();
 
