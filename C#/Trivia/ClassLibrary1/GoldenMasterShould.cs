@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.Serialization;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
+using Trivia;
 
-namespace Trivia.Tests
+namespace ClassLibrary1
 {
 
     [TestFixture]
