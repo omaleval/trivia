@@ -123,8 +123,10 @@ namespace Trivia
         }
 
 
+
         private string CurrentCategory()
         {
+            var categories = new Dictionary<int, string>();
             if (_players[_currentPlayer].Place % 4 == 0) return "Pop";
             if (_players[_currentPlayer].Place % 4 == 1) return "Science";
             if (_players[_currentPlayer].Place % 4 == 2) return "Sports";
