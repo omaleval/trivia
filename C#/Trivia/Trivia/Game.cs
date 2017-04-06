@@ -17,8 +17,6 @@ namespace Trivia
         {
             _players = players;
             _questions.Generate();
-
-           
         }
 
         public void Roll(int roll)
