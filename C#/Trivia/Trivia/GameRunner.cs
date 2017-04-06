@@ -1,13 +1,11 @@
 ﻿using System;
 
-
-
 namespace Trivia
 {
     public class GameRunner
     {
 
-        private static bool winner;
+        private static bool _winner;
 
         public static void Main(String[] args)
         {
@@ -25,21 +23,18 @@ namespace Trivia
 
                 do
                 {
-
                     aGame.Roll(rand.Next(5) + 1);
 
                     if (rand.Next(9) == 7)
                     {
-                        winner = aGame.WrongAnswer();
+                        _winner = aGame.WrongAnswer();
                     }
                     else
                     {
-                        winner = aGame.WasCorrectlyAnswered();
+                        _winner = aGame.WasCorrectlyAnswered();
                     }
-
-
                     Console.WriteLine(seed);
-                } while (!winner);
+                } while (!_winner);
 
             }
         }

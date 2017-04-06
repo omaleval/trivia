@@ -1,3 +1,16 @@
+Skip to content
+Features Business Explore Pricing
+This repository
+Search
+Sign in or Sign up
+ Watch 1  Star 0  Fork 0 Oriik/trivia
+ Code  Issues 0  Pull requests 0  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathtrivia/C#/Trivia/Trivia/goldenmaster.txt
+75546df  15 days ago
+ QUINIOU GUILLAUME p1513906 golden master avec faute d'orthographe
+0 contributors
+RawBlameHistory     
+14026 lines (14025 sloc)  288 KB
 Chet was added
 They are player number 1
 Pat was added
@@ -14023,3 +14036,5 @@ Rock Question 6
 Answer was correct!!!!
 Sue now has 6 Gold Coins.
 99
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

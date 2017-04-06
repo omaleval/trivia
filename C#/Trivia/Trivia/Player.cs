@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Trivia
 {
@@ -39,9 +36,7 @@ namespace Trivia
         }
 
         public bool InPenaltyBox { get; set; }
-
         public int GoldCoins { get; set; }
-
         public int Place { get; set; }
         public string Nom { get; private set; }
     }
