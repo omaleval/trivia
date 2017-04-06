@@ -1,43 +1,50 @@
 ﻿using System;
 
+
+
 namespace Trivia
 {
     public class GameRunner
     {
 
-        private static bool _notAWinner;
+        private static bool winner;
 
-        public static void Main(string[] args)
+        public static void Main(String[] args)
         {
-            /*Game aGame = new Game();
 
-            aGame.add("Chet");
-            aGame.add("Pat");
-            aGame.add("Sue");*/
-
-            for (int i = 0; i < 100; i++)
+            for (int seed = 0; seed < 100; seed++)
             {
-                Console.WriteLine("-----------------------------------");
-                Random rand = new Random(1);
-                Game aGame = new Game();
+                
+                var players = new Players();
+                players.Add("Chet");
+                players.Add("Pat");
+                players.Add("Sue");
 
-                aGame.Add("Chet");
-                aGame.Add("Pat");
-                aGame.Add("Sue");
+                Game aGame = new Game(players);
+                Random rand = new Random(seed);
 
                 do
                 {
+
                     aGame.Roll(rand.Next(5) + 1);
 
-                    _notAWinner = rand.Next(9) == 7 ? aGame.WrongAnswer() : aGame.WasCorrectlyAnswered();
+                    if (rand.Next(9) == 7)
+                    {
+                        winner = aGame.WrongAnswer();
+                    }
+                    else
+                    {
+                        winner = aGame.WasCorrectlyAnswered();
+                    }
 
-                } while (_notAWinner);
+
+                    Console.WriteLine(seed);
+                } while (!winner);
+
             }
-
         }
 
 
     }
 
 }
-
