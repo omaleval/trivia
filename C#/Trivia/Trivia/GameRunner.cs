@@ -4,7 +4,7 @@ namespace Trivia
 {
     public class GameRunner
     {
-        private static bool winner;
+        private static bool _winner;
 
         public static void Main(String[] args)
         {
@@ -15,7 +15,7 @@ namespace Trivia
                 players.Add("Pat");
                 players.Add("Sue");
 
-                var aGame = new Game(players, new Questions());
+                var aGame = new Game(players, new Questions(new [] { "Pop", "Science", "Sports", "Rock" }, new QuestionGenerator().GetQuestion));
 
                 Random rand = new Random(i);
 
@@ -25,13 +25,13 @@ namespace Trivia
 
                     if (rand.Next(9) == 7)
                     {
-                        winner = aGame.WrongAnswer();
+                        _winner = aGame.WrongAnswer();
                     }
                     else
                     {
-                        winner = aGame.WasCorrectlyAnswered();
+                        _winner = aGame.WasCorrectlyAnswered();
                     }
-                } while (!winner);
+                } while (!_winner);
             }
         }
     }

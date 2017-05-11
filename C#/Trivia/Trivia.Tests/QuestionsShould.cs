@@ -13,7 +13,7 @@ namespace Trivia.Tests
             var stringWriter = new StringWriter();
             var previousConsoleOut = Console.Out;
             Console.SetOut(stringWriter);
-            var questions = new Questions(new [] { "Pop", "Science", "Sports", "Rock", "Cinema" });
+            var questions = new Questions(new [] { "Pop", "Science", "Sports", "Rock", "Cinema" }, new QuestionGenerator().GetQuestion);
 
             questions.AskQuestion(4);
 

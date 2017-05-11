@@ -8,15 +8,11 @@ namespace Trivia
     {
         private readonly List<QuestionsStack> _categories = new List<QuestionsStack>();
 
-        public Questions() : this(new [] { "Pop", "Science", "Sports", "Rock" })
-        {
-        }
-
-        public Questions(IEnumerable<string> categories)
+        public Questions(IEnumerable<string> categories, Func<string, LinkedList<string>> getQuestions)
         {
             foreach (var category in categories)
             {
-                var questionsStack = new QuestionsStack(category);
+                var questionsStack = new QuestionsStack(category, getQuestions);
                 _categories.Add(questionsStack);
             }
         }
