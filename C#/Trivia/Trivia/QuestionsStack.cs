@@ -6,13 +6,15 @@ namespace Trivia
 {
     internal class QuestionsStack
     {
-        private LinkedList<string> _questions = new LinkedList<string>();
-        private IQuestionsRepository _questionsRepository;
+        private readonly LinkedList<string> _questions = new LinkedList<string>();
+        private readonly IQuestionsRepository _questionsRepository;
+        private readonly IIDisplay _display;
 
-        public QuestionsStack(string category, IQuestionsRepository questionsRepository)
+        public QuestionsStack(string category, IQuestionsRepository questionsRepository, IIDisplay display)
         {
             Category = category;
             _questionsRepository = questionsRepository;
+            _display = display;
             _questions = _questionsRepository.Get(category);
         }
         
@@ -20,7 +22,7 @@ namespace Trivia
 
         public void AskQuestionAndDiscard()
         {
-            Console.WriteLine(_questions.First());
+            _display.Display(_questions.First());
             _questions.RemoveFirst();
         }
     }

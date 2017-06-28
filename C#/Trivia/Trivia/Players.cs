@@ -7,6 +7,12 @@ namespace Trivia
     public class Players
     {
         private readonly List<Player> _players = new List<Player>();
+        private readonly IIDisplay _display;
+
+        public Players(IIDisplay display)
+        {
+            _display = display;
+        }
 
         public Player Current { get; private set; }
 
@@ -19,15 +25,15 @@ namespace Trivia
 
         public bool Add(string playerName)
         {
-            var player = new Player(playerName);
+            var player = new Player(playerName, _display);
             if (!_players.Any())
             {
                 Current = player;
             }
             _players.Add(player);
 
-            Console.WriteLine(playerName + " was added");
-            Console.WriteLine("They are player number " + _players.Count);
+            _display.Display(playerName + " was added");
+            _display.Display("They are player number " + _players.Count);
             return true;
         }
     }
