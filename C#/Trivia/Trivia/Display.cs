@@ -2,7 +2,7 @@
 
 namespace Trivia
 {
-    class Display : IIDisplay
+    public class Display : IIDisplay
     {
         void IIDisplay.Display(string text)
         {

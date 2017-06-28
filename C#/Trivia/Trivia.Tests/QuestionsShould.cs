@@ -7,13 +7,14 @@ namespace Trivia.Tests
 {
     public class QuestionsShould
     {
+
         [Test]
         public void AllowToPlayWith5Categories()
         {
             var stringWriter = new StringWriter();
             var previousConsoleOut = Console.Out;
             Console.SetOut(stringWriter);
-            var questions = new Questions(new [] { "Pop", "Science", "Sports", "Rock", "Cinema" }, new GeneratedQuestions());
+            var questions = new Questions(new [] { "Pop", "Science", "Sports", "Rock", "Cinema" }, new GeneratedQuestions(), new Display());
 
             questions.AskQuestion(4);
 
