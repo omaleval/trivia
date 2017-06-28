@@ -69,7 +69,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameRunner.cs" />
     <Compile Include="GeneratedQuestions.cs" />
-    <Compile Include="IIDisplay.cs" />
+    <Compile Include="IDispatchEvent.cs" />
     <Compile Include="IQuestionsRepository.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Players.cs" />

@@ -5,19 +5,19 @@ namespace Trivia
     public class GameRunner
     {
         private static bool _winner;
-        public static IIDisplay _display;
+        public static IDispatchEvent _eventDispatcher;
 
         public static void Main(String[] args)
         {
             for (var i = 0; i < 10; i++)
             {
-                var players = new Players(_display);
+                var players = new Players(_eventDispatcher);
                 players.Add("Chet");
                 players.Add("Pat");
                 players.Add("Sue");
 
                 var categories = new[] { "Pop", "Science", "Sports", "Rock" };
-                var aGame = new Game(players, new Questions(categories, new GeneratedQuestions(), _display), _display);
+                var aGame = new Game(players, new Questions(categories, new GeneratedQuestions(), _eventDispatcher), _eventDispatcher);
 
                 Random rand = new Random(i);
 

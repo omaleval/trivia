@@ -1,17 +1,15 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Trivia
 {
     public class Questions
     {
         private readonly List<QuestionsStack> _categories = new List<QuestionsStack>();
-        private readonly IIDisplay _display;
+        private readonly IDispatchEvent _eventDispatcher;
 
-        public Questions(IEnumerable<string> categories, IQuestionsRepository questionsRepository, IIDisplay display)
+        public Questions(IEnumerable<string> categories, IQuestionsRepository questionsRepository, IDispatchEvent display)
         {
-            _display = display;
+            _eventDispatcher = display;
             foreach (var category in categories)
             {
                 var questionsStack = new QuestionsStack(category, questionsRepository, display);
@@ -21,7 +19,7 @@ namespace Trivia
 
         public void AskQuestion(int currentPlayerPlace)
         {
-            _display.Display("The category is " + _categories[currentPlayerPlace % _categories.Count].Category);
+            _eventDispatcher.Display("The category is " + _categories[currentPlayerPlace % _categories.Count].Category);
             _categories[currentPlayerPlace % _categories.Count].AskQuestionAndDiscard();
         }
     }

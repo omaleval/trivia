@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Trivia
@@ -7,11 +6,11 @@ namespace Trivia
     public class Players
     {
         private readonly List<Player> _players = new List<Player>();
-        private readonly IIDisplay _display;
+        private IDispatchEvent _eventDispatcher;
 
-        public Players(IIDisplay display)
+        public Players(IDispatchEvent display)
         {
-            _display = display;
+            _eventDispatcher = display;
         }
 
         public Player Current { get; private set; }
@@ -25,15 +24,15 @@ namespace Trivia
 
         public bool Add(string playerName)
         {
-            var player = new Player(playerName, _display);
+            var player = new Player(playerName, _eventDispatcher);
             if (!_players.Any())
             {
                 Current = player;
             }
             _players.Add(player);
 
-            _display.Display(playerName + " was added");
-            _display.Display("They are player number " + _players.Count);
+            _eventDispatcher.Display(playerName + " was added");
+            _eventDispatcher.Display("They are player number " + _players.Count);
             return true;
         }
     }

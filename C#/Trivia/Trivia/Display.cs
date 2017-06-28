@@ -2,9 +2,9 @@
 
 namespace Trivia
 {
-    public class Display : IIDisplay
+    public class Display : IDispatchEvent
     {
-        void IIDisplay.Display(string text)
+        void IDispatchEvent.Display(string text)
         {
             Console.WriteLine(text);
         }

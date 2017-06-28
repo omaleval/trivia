@@ -4,7 +4,7 @@ namespace Trivia
 {
     public class Player
     {
-        private readonly IIDisplay _display;
+        private readonly IDispatchEvent _eventDispatcher;
         public string Name { get; private set; }
 
         public int Place { get; private set; }
@@ -13,10 +13,10 @@ namespace Trivia
 
         public bool InPenaltyBox { get; set; }
 
-        public Player(string name, IIDisplay display)
+        public Player(string name, IDispatchEvent display)
         {
             Name = name;
-            _display = display;
+            _eventDispatcher = display;
             Place = 0;
             GoldCoins = 0;
             InPenaltyBox = false;
@@ -32,7 +32,7 @@ namespace Trivia
         public void WinAGoldCoin()
         {
             GoldCoins++;
-            _display.Display(Name + " now has " + GoldCoins + " Gold Coins.");
+            _eventDispatcher.Display(Name + " now has " + GoldCoins + " Gold Coins.");
         }
 
         public void GoToPenaltyBox()
